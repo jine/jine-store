@@ -13,3 +13,9 @@ export interface Product {
   thumbnail: string;
   images: string[];
 }
+export interface ProductFetch {
+  total: number,
+  skip: number,
+  limit: number,
+  products: Product[];
+}

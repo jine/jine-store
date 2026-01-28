@@ -1,19 +1,27 @@
 import Hero from "@/components/hero";
 import { ProductGrid } from "@/components/product-grid";
-import data from "@/data/products.json";
+import type { Product, ProductFetch } from "@/lib/types";
+
+async function fetchProducts(): Promise<ProductFetch> {
+	const response = await fetch('https://dummyjson.com/products?limit=30');
+	const data = await response.json();
+	return data;
+}
 
 /*https://dummyjson.com/products?limit=12;*/
 
-export default function Home() {
+export default async function Home() {
+  const jsondata = await fetchProducts();
+
   return (
     <div className="flex flex-col gap-12 pb-20">
 
       <Hero />
 
       <div className="container mx-auto px-4">
-          <h2 className="font-bold text-2xl">Products</h2>
+          <h2 className="pb-4 font-bold text-2xl">Products</h2>
 
-          <ProductGrid products={data.products} />
+          <ProductGrid products={jsondata.products} />
       </div>
     </div>
   );
