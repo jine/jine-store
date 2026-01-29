@@ -16,3 +16,9 @@ export async function getProduct(slug: string): Promise<Product> {
     const data = await response.json();
     return data;
 }
+
+/* Thanks Grok for this */
+export function firstCharToUpperCase(str: string): string {
+  if (!str) return str;
+  return str[0].toUpperCase() + str.slice(1);
+}

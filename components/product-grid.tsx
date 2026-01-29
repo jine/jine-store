@@ -15,14 +15,11 @@ export async function ProductGrid({
     return (
         <div className="container mx-auto px-4">
             <h2 className="pb-4 font-bold text-2xl">
-                Products <span className="text-foreground/60">|</span>
+                Products<span className="text-foreground/60"> | </span>
                 <Link
                     href={`/products?search=${search}&sort=${sort == "asc" ? "desc" : "asc"}`}
                     className="text-sm text-foreground/60"
-                >
-                    {" "}
-                    Sorting by price {sort == "asc" ? "ascending" : "descending"}
-                </Link>
+                >Sorting by price {sort == "asc" ? "ascending" : "descending"}</Link>
             </h2>
 
             {products.length < 1 ? (

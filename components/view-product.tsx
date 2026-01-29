@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { Product } from "@/lib/types";
 import Button from "@/components/button";
+import Link from "next/link";
+import { firstCharToUpperCase } from "@/lib/functions";
 
 export function ViewProduct({ product }: { product: Product }) {
     // Hack to modify the price to fit SEK
@@ -8,6 +10,26 @@ export function ViewProduct({ product }: { product: Product }) {
 
     return (
         <main className="container mx-auto px-4 py-12 max-w-5xl">
+            
+            {/* Breadcrumbs */}
+            <section className="mb-4">
+                <div className="text-sm text-gray-500">
+                    <Link href="/products" className="hover:underline">Products</Link>
+
+                    <span className="mx-2">/</span>
+
+                    <Link href={`/category/${product.category}`}>
+                        {firstCharToUpperCase(product.category)}
+                    </Link>
+
+                    <span className="mx-2">/</span>
+
+                    <span className="text-gray-900 font-semibold">
+                        {product.title}
+                    </span>
+                </div>
+            </section>
+
             <article className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 {/* Image */}
                 <section className="bg-gray-50 rounded-2xl overflow-hidden aspect-square relative border border-gray-200">
