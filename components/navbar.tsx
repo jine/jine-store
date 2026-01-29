@@ -10,12 +10,18 @@ export default function Navbar() {
                 <nav>
                     <ul className="flex gap-8 items-center">
                         <li>
-                            <Link href="/" className="font-medium text-sm transition-colors hover:text-foreground/80" >
+                            <Link
+                                href="/"
+                                className="font-medium text-sm transition-colors hover:text-foreground/80"
+                            >
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products" className="font-medium text-muted text-sm transition-colors hover:text-foreground">
+                            <Link
+                                href="/products"
+                                className="font-medium text-muted text-sm transition-colors hover:text-foreground"
+                            >
                                 Products
                             </Link>
                         </li>

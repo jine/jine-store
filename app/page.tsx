@@ -4,27 +4,25 @@ import type { Product, ProductFetch } from "@/lib/types";
 import { Suspense } from "react";
 
 async function fetchProducts(): Promise<ProductFetch> {
-	const response = await fetch('https://dummyjson.com/products?limit=30');
-	const data = await response.json();
-	return data;
+    const response = await fetch("https://dummyjson.com/products?limit=30");
+    const data = await response.json();
+    return data;
 }
 
 export default async function Home() {
-  const jsondata = await fetchProducts();
+    const jsondata = await fetchProducts();
 
-  return (
-    <div className="flex flex-col gap-12 pb-20">
+    return (
+        <div className="flex flex-col gap-12 pb-20">
+            <Hero />
 
-      <Hero />
+            <div className="container mx-auto px-4">
+                <h2 className="pb-4 font-bold text-2xl">Products</h2>
 
-      <div className="container mx-auto px-4">
-        <h2 className="pb-4 font-bold text-2xl">Products</h2>
-
-        <Suspense fallback={<div>Loading...</div>}>
-          <ProductGrid products={jsondata.products} />
-        </Suspense>
-      </div>
-    </div>
-  );
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ProductGrid products={jsondata.products} />
+                </Suspense>
+            </div>
+        </div>
+    );
 }
-
