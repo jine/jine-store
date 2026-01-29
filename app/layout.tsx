@@ -12,7 +12,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-    title: "Jine Next App",
+    title: "Store App",
     description: "Shoppin' like its 1990",
 };
 

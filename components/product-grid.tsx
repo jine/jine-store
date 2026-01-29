@@ -21,7 +21,7 @@ export async function ProductGrid({
                     className="text-sm text-foreground/60"
                 >
                     {" "}
-                    Sorting by {sort == "asc" ? "ascending" : "descending"}
+                    Sorting by price {sort == "asc" ? "ascending" : "descending"}
                 </Link>
             </h2>
 
