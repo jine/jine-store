@@ -9,8 +9,6 @@ async function fetchProducts(): Promise<ProductFetch> {
 	return data;
 }
 
-/*https://dummyjson.com/products?limit=12;*/
-
 export default async function Home() {
   const jsondata = await fetchProducts();
 
