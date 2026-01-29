@@ -15,17 +15,11 @@ async function fetchProducts(search = "", sort = "asc"): Promise<ProductFetch> {
 export default async function Home({
     searchParams,
 }: {
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+    searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
     const { sort = "asc", search = "" } = await searchParams;
-    let jsondata: ProductFetch;
 
-    if (search !== "" || sort !== "asc") {
-        jsondata = await fetchProducts(search as string, sort as string);
-    } else {
-        jsondata = await fetchProducts();
-    }
-
+    const jsondata = await fetchProducts(search, sort);
     const products = jsondata.products;
 
     return (
