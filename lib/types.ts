@@ -31,5 +31,5 @@ export interface Category {
     slug: string;
 }
 export interface CategoriesFetch {
-  categories: Category[];
+    categories: Category[];
 }

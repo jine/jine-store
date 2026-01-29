@@ -9,5 +9,5 @@ export default async function Category({
     // Leaving this for the future, we might want to use search and sort later
     const { sort = "asc", search = "" } = await searchParams;
 
-    return ( <ViewCategory /> );
+    return <ViewCategory />;
 }
