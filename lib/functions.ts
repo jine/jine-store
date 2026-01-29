@@ -1,6 +1,9 @@
 import type { Product, ProductFetch } from "@/lib/types";
 
-export async function getProducts(search = "", sort = "asc"): Promise<ProductFetch> {
+export async function getProducts(
+    search = "",
+    sort = "asc",
+): Promise<ProductFetch> {
     const response = await fetch(
         `https://dummyjson.com/products/search?q=${search}&order=${sort}&sortBy=price`,
     );
@@ -19,6 +22,6 @@ export async function getProduct(slug: string): Promise<Product> {
 
 /* Thanks Grok for this */
 export function firstCharToUpperCase(str: string): string {
-  if (!str) return str;
-  return str[0].toUpperCase() + str.slice(1);
+    if (!str) return str;
+    return str[0].toUpperCase() + str.slice(1);
 }

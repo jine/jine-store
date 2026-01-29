@@ -10,11 +10,12 @@ export function ViewProduct({ product }: { product: Product }) {
 
     return (
         <main className="container mx-auto px-4 py-12 max-w-5xl">
-            
             {/* Breadcrumbs */}
             <section className="mb-4">
                 <div className="text-sm text-gray-500">
-                    <Link href="/products" className="hover:underline">Products</Link>
+                    <Link href="/products" className="hover:underline">
+                        Products
+                    </Link>
 
                     <span className="mx-2">/</span>
 

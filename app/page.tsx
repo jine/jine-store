@@ -13,7 +13,11 @@ export default async function Home({
         <main className="flex flex-col gap-12 pb-20">
             <Hero />
 
-            <Suspense fallback={<div className="container mx-auto px-4">Loading...</div>}>
+            <Suspense
+                fallback={
+                    <div className="container mx-auto px-4">Loading...</div>
+                }
+            >
                 <ProductGrid search={search} sort={sort} />
             </Suspense>
         </main>
