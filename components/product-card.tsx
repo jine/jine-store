@@ -5,7 +5,7 @@ import Link from "next/link";
 export function ProductCard({ product }: { product: Product }) {
     return (
         <Link
-            className="block relative p-3 bg-white border rounded-md"
+            className="block relative p-3 bg-white border border-gray-200 rounded-md"
             href={`/product/${product.id}-${product.title.toLowerCase().replace(/\s+/g, "-")}`}
         >
             <Image

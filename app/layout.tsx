@@ -25,7 +25,7 @@ export default function RootLayout({
         <html lang="en" className={`${openSans.variable}`}>
             <body className="grid grid-rows-[auto_1fr_auto] min-h-screen">
                 <Navbar />
-                <main>{children}</main>
+                {children}
                 <Footer />
             </body>
         </html>

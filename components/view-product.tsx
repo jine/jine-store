@@ -1,30 +1,72 @@
 import Image from "next/image";
 import type { Product } from "@/lib/types";
+import Button from "@/components/button";
 
 export function ViewProduct({ product }: { product: Product }) {
+    // Hack to modify the price to fit SEK
+    const modifiedPrice = Math.floor(product.price) * 10;
+
     return (
-        <div className="container mx-auto px-4grid p-3 bg-white">
-            <div className="grid grid-cols-2 mb-4">
-                <h2 className="p-3 font-semibold text-foreground text-m">
-                    {product.title}
-                </h2>
+        <main className="container mx-auto px-4 py-12 max-w-5xl">
+            <article className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                {/* Image */}
+                <section className="bg-gray-50 rounded-2xl overflow-hidden aspect-square relative border border-gray-200">
+                    <Image
+                        src={product.thumbnail}
+                        alt={product.title}
+                        className="object-contain p-8"
+                        width={500}
+                        height={500}
+                    />
+                </section>
 
-                <Image
-                    src={product.thumbnail}
-                    alt={product.title}
-                    width={500}
-                    height={500}
-                    className="object-cover"
-                />
+                {/* Info */}
+                <section className="flex flex-col space-y-6">
+                    <div>
+                        <p className="text-sm font-medium text-gray-500 mb-1">
+                            {product.brand}
+                        </p>
+                        <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+                            {product.title}
+                        </h1>
+                        <p className="text-lg font-semibold text-gray-900 mt-2">
+                            {modifiedPrice} SEK
+                        </p>
+                    </div>
 
-                <h3 className="p-3">{product.brand}</h3>
-                <h3 className="p-3 text-sm">{product.category}</h3>
-                <p className="p-3 font-bold text-foreground text-m">
-                    {Math.floor(product.price) * 10} SEK
-                </p>
-            </div>
+                    <div className="border-t border-gray-100 pt-6">
+                        <p className="text-gray-600 leading-relaxed text-sm">
+                            {product.description}
+                        </p>
+                    </div>
 
-            <p className="mt-1">{product.description}</p>
-        </div>
+                    <div className="space-y-4 pt-4">
+                        <div className="flex items-center space-x-2 text-sm">
+                            <span className="text-foreground">Rating:</span>{" "}
+                            <span className="text-yellow-500">
+                                {product.rating}
+                            </span>
+                            <span className="text-foreground">|</span>
+                            <span
+                                className={`${product.stock > 0 ? "text-green-600" : "text-red-500"}`}
+                            >
+                                {product.stock > 0
+                                    ? `${product.stock} in stock`
+                                    : "Not in stock"}
+                            </span>
+                        </div>
+
+                        <Button
+                            params={{
+                                title: "Add to Cart",
+                                href: "#",
+                                disabled: product.stock === 0,
+                                asLink: false,
+                            }}
+                        />
+                    </div>
+                </section>
+            </article>
+        </main>
     );
 }

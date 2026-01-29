@@ -13,7 +13,7 @@ export default async function Home() {
     const jsondata = await fetchProducts();
 
     return (
-        <div className="flex flex-col gap-12 pb-20">
+        <main className="flex flex-col gap-12 pb-20">
             <Hero />
 
             <div className="container mx-auto px-4">
@@ -23,6 +23,6 @@ export default async function Home() {
                     <ProductGrid products={jsondata.products} />
                 </Suspense>
             </div>
-        </div>
+        </main>
     );
 }
