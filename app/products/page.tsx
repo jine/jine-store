@@ -1,4 +1,3 @@
-import Hero from "@/components/hero";
 import { ProductGrid } from "@/components/product-grid";
 import type { Product, ProductFetch } from "@/lib/types";
 import Link from "next/link";
@@ -12,7 +11,7 @@ async function fetchProducts(search = "", sort = "asc"): Promise<ProductFetch> {
     return data;
 }
 
-export default async function Home({
+export default async function Products({
     searchParams,
 }: {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -29,9 +28,7 @@ export default async function Home({
     const products = jsondata.products;
 
     return (
-        <main className="flex flex-col gap-12 pb-20">
-            <Hero />
-
+        <main className="flex flex-col gap-12 pb-20 pt-10">
             <div className="container mx-auto px-4">
                 <h2 className="pb-4 font-bold text-2xl">
                     Products <span className="text-foreground/60">|</span>

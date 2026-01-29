@@ -11,7 +11,7 @@ export default function Navbar() {
                     <ul className="flex gap-8 items-center">
                         <li>
                             <form
-                                action="/"
+                                action="/products"
                                 method="GET"
                                 className="flex items-center"
                             >
