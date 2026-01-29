@@ -1,6 +1,6 @@
 import type { Product, ProductFetch } from "@/lib/types";
 
-export async function fetchProducts(search = "", sort = "asc"): Promise<ProductFetch> {
+export async function getProducts(search = "", sort = "asc"): Promise<ProductFetch> {
     const response = await fetch(
         `https://dummyjson.com/products/search?q=${search}&order=${sort}&sortBy=price`,
     );

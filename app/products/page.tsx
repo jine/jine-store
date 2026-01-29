@@ -1,5 +1,5 @@
 import { ProductGrid } from "@/components/product-grid";
-import { fetchProducts } from "@/lib/functions";
+import { getProducts } from "@/lib/functions";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -10,7 +10,7 @@ export default async function Products({
 }) {
     const { sort = "asc", search = "" } = await searchParams;
 
-    const jsondata = await fetchProducts(search, sort);
+    const jsondata = await getProducts(search, sort);
     const products = jsondata.products;
 
     return (
@@ -28,7 +28,11 @@ export default async function Products({
                 </h2>
 
                 <Suspense fallback={<div>Loading...</div>}>
+                  {jsondata.products.length < 1 ? (
+                    <div>No products found.</div>
+                  ) : (
                     <ProductGrid products={products} />
+                  )}
                 </Suspense>
             </div>
         </main>
