@@ -20,7 +20,7 @@ export default async function Home({
     const { sort = "asc", search = "" } = await searchParams;
     let jsondata: ProductFetch;
 
-    if (search !== "") {
+    if (search !== "" || sort !== "asc") {
         jsondata = await fetchProducts(search as string, sort as string);
     } else {
         jsondata = await fetchProducts();
