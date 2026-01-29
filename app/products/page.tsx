@@ -1,15 +1,7 @@
 import { ProductGrid } from "@/components/product-grid";
-import type { Product, ProductFetch } from "@/lib/types";
+import { fetchProducts } from "@/lib/functions";
 import Link from "next/link";
 import { Suspense } from "react";
-
-async function fetchProducts(search = "", sort = "asc"): Promise<ProductFetch> {
-    const response = await fetch(
-        `https://dummyjson.com/products/search?q=${search}&order=${sort}&sortBy=price`,
-    );
-    const data = await response.json();
-    return data;
-}
 
 export default async function Products({
     searchParams,
