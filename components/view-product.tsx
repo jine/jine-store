@@ -4,7 +4,7 @@ import Button from "@/components/button";
 
 export function ViewProduct({ product }: { product: Product }) {
     // Hack to modify the price to fit SEK
-    const modifiedPrice = Math.floor(product.price) * 10;
+    const modifiedPrice = Math.floor(product.price * 10);
 
     return (
         <main className="container mx-auto px-4 py-12 max-w-5xl">
