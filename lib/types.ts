@@ -25,3 +25,11 @@ export interface ProductGridProps {
     search?: string;
     sort?: string;
 }
+
+export interface Category {
+    name: string;
+    slug: string;
+}
+export interface CategoriesFetch {
+  categories: Category[];
+}

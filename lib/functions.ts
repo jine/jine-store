@@ -1,4 +1,4 @@
-import type { Product, ProductFetch } from "@/lib/types";
+import type { Product, ProductFetch, CategoriesFetch } from "@/lib/types";
 
 export async function getProducts(
     search = "",
@@ -24,4 +24,12 @@ export async function getProduct(slug: string): Promise<Product> {
 export function firstCharToUpperCase(str: string): string {
     if (!str) return str;
     return str[0].toUpperCase() + str.slice(1);
+}
+
+
+export async function getCategories(): Promise<CategoriesFetch> {
+    const response = await fetch("https://dummyjson.com/products/categories");
+    const data = await response.json();
+
+    return data;
 }

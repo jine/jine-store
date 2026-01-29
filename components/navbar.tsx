@@ -38,6 +38,14 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link
+                                href="/categories"
+                                className="font-medium text-muted text-sm transition-colors hover:text-foreground"
+                            >
+                                Categories
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
                                 href="/products"
                                 className="font-medium text-muted text-sm transition-colors hover:text-foreground"
                             >
