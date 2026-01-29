@@ -19,3 +19,9 @@ export interface ProductFetch {
     limit: number;
     products: Product[];
 }
+
+/* I need to have an interface to be able to pass props to ProductGrid component */
+export interface ProductGridProps {
+    search?: string;
+    sort?: string;
+}

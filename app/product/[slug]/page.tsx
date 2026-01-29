@@ -1,5 +1,5 @@
-import { getProduct } from "@/lib/functions";
 import { ViewProduct } from "@/components/view-product";
+import { getProduct } from "@/lib/functions";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ export default async function ProductPage({
             <ViewProduct product={product} />
 
             <Link
-                href="/"
+                href="/products"
                 className="mx-auto px-6 py-3 font-semibold text-foreground text-xl"
             >
                 Back to Products
