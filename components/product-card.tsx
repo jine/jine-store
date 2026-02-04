@@ -3,9 +3,6 @@ import type { Product } from "@/lib/types";
 import Link from "next/link";
 
 export function ProductCard({ product }: { product: Product }) {
-    
-
-    /A-Z0-9[+]/
 
     // Create URL-friendly slug
     const url = `/product/${product.id}-${product.title.replace(/\s+/g, "-").toLowerCase()}`;
