@@ -18,7 +18,7 @@ export async function CategoriesGrid() {
                     <Link
                         key={`${category.slug}`}
                         href={`/category/${category.slug}`}
-                        className="block px-6 py-10 border rounded-lg text-center hover:shadow"
+                        className="block px-6 py-10 border border-gray-300 rounded-lg text-center hover:shadow"
                     >
                         <h3 className="text-lg font-semibold">
                             {category.name}
