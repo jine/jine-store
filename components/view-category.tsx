@@ -7,9 +7,8 @@ export default async function ViewCategory({
 }: {
     categorySlug: string;
 }) {
-    /* I need to redo this with params later on, but for now this is fine */
     return (
-        <main className="flex flex-col gap-12 pb-20">
+        <main className="p-8">
             <Suspense
                 fallback={
                     <div className="container mx-auto px-4">Loading...</div>
