@@ -14,7 +14,7 @@ export default function Footer() {
         <footer className="bg-gray-900 text-gray-300">
             <div className="container mx-auto px-6 pb-8 pt-16">
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-x-12">
-                    {/* Brand + description */}
+                    {/* Store info */}
                     <div className="col-span-2 md:col-span-1">
                         <Link
                             href="/"
