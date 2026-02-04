@@ -9,7 +9,9 @@ import Link from "next/link";
  */
 export function ProductCard({ product }: { product: Product }) {
     // Create URL-friendly slug
-    const url = `/product/${product.id}-${encodeURIComponent(product.title.replace(/\s+/g, "-").toLowerCase())}`;
+    const url = `/product/${product.id}-${encodeURIComponent(
+        product.title.replace(/\s+/g, "-").toLowerCase(),
+    )}`;
 
     return (
         <Link
