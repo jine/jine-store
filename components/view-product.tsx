@@ -3,6 +3,11 @@ import type { Product } from "@/lib/types";
 import Button from "@/components/button";
 import Link from "next/link";
 
+/**
+ * View product component.
+ * @param product - The product to display.
+ * @returns The view product component.
+ */
 export function ViewProduct({ product }: { product: Product }) {
     // Hack to modify the price to fit SEK
     const modifiedPrice = Math.floor(product.price * 10);

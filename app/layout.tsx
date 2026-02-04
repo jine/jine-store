@@ -11,11 +11,30 @@ const openSans = Open_Sans({
     display: "swap",
 });
 
+/**
+ * Metadata for the root layout.
+ * Static for now, can be dynamic later.
+ */
 export const metadata: Metadata = {
-    title: "Store App",
-    description: "Shoppin' like its 1990",
+    metadataBase: new URL(
+        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    ),
+    title: {
+        template: "%s | Store App",
+        default: "Store App",
+    },
+    description: "Shoppin' like its 1990?",
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
+/**
+ * Root layout.
+ * @param children - The children to render.
+ * @returns The root layout.
+ */
 export default function RootLayout({
     children,
 }: Readonly<{

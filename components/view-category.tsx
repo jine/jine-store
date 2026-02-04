@@ -2,6 +2,11 @@ import { ProductGrid } from "@/components/product-grid";
 import { Category } from "@/lib/types";
 import { Suspense } from "react";
 
+/**
+ * View category component.
+ * @param categorySlug - The category slug.
+ * @returns The view category component.
+ */
 export default async function ViewCategory({
     categorySlug,
 }: {

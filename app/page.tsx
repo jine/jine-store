@@ -2,6 +2,11 @@ import Hero from "@/components/hero";
 import { ProductGrid } from "@/components/product-grid";
 import { Suspense } from "react";
 
+/**
+ * Home page.
+ * @param searchParams - The search parameters for the home page.
+ * @returns The home page.
+ */
 export default async function Home({
     searchParams,
 }: {

@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/**
+ * Button component.
+ * @param params - The parameters for the button.
+ * @returns The button component.
+ */
 export default function Button({
     params,
 }: {

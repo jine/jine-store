@@ -1,3 +1,7 @@
+/**
+ * Footer component.
+ * @returns The footer component.
+ */
 export default function Footer() {
     return (
         <footer className="bg-white border-t">

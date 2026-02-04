@@ -1,6 +1,21 @@
 import { Suspense } from "react";
 import { ProductGrid } from "@/components/product-grid";
+import type { Metadata } from "next";
 
+/**
+ * Metadata for the products page.
+ * Static for now, can be dynamic later.
+ */
+export const metadata: Metadata = {
+    title: "All Products",
+    description: "Check out our products.",
+};
+
+/**
+ * Products page.
+ * @param searchParams - The search parameters for the products page.
+ * @returns The products page.
+ */
 export default async function Products({
     searchParams,
 }: {

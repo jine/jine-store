@@ -2,6 +2,10 @@ import { getCategories } from "@/lib/functions";
 import { Category } from "@/lib/types";
 import Link from "next/link";
 
+/**
+ * Categories grid component.
+ * @returns The categories grid component.
+ */
 export async function CategoriesGrid() {
     const categories: Category[] = await getCategories();
 

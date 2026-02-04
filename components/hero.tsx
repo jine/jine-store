@@ -1,3 +1,7 @@
+/**
+ * Hero component.
+ * @returns The hero component.
+ */
 export default function Hero() {
     return (
         <section className="px-4 py-20 bg-white">

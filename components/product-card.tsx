@@ -2,9 +2,14 @@ import Image from "next/image";
 import type { Product } from "@/lib/types";
 import Link from "next/link";
 
+/**
+ * Product card component.
+ * @param product - The product to display.
+ * @returns The product card component.
+ */
 export function ProductCard({ product }: { product: Product }) {
     // Create URL-friendly slug
-    const url = `/product/${product.id}-${product.title.replace(/\s+/g, "-").toLowerCase()}`;
+    const url = `/product/${product.id}-${encodeURIComponent(product.title.replace(/\s+/g, "-").toLowerCase())}`;
 
     return (
         <Link

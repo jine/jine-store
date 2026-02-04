@@ -1,5 +1,9 @@
 import Button from "@/components/button";
 
+/**
+ * Not found page.
+ * @returns The not found page.
+ */
 export default function NotFound() {
     return (
         <main className="px-4 py-24 min-h-[60vh] text-center">

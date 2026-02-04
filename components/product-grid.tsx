@@ -3,6 +3,13 @@ import { getProducts, getProductsByCategory } from "@/lib/functions";
 import type { ProductGridProps } from "@/lib/types";
 import Link from "next/link";
 
+/**
+ * Product grid component.
+ * @param search - The search query.
+ * @param sort - The sort order.
+ * @param category - The category to filter by.
+ * @returns The product grid component.
+ */
 export async function ProductGrid({
     search = "",
     sort = "asc",
