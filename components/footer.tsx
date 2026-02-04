@@ -16,32 +16,39 @@ export default function Footer() {
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-x-12">
                     {/* Brand + description */}
                     <div className="col-span-2 md:col-span-1">
-                        <Link href="/" className="inline-block text-2xl font-bold tracking-tight text-white">
+                        <Link
+                            href="/"
+                            className="inline-block text-2xl font-bold tracking-tight text-white"
+                        >
                             Store app
                         </Link>
                         <p className="mt-5 text-sm leading-6 text-gray-400">
                             Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. 
-                            Odit quidem autem voluptate minima sed labore nam.
+                            elit. Odit quidem autem voluptate minima sed labore
+                            nam.
                         </p>
 
                         <div className="mt-6 flex gap-4">
-                            <Link href="#"
+                            <Link
+                                href="#"
                                 className="hover:text-white transition-colors"
                             >
                                 <Instagram size={32} />
                             </Link>
-                            <Link href="#"
+                            <Link
+                                href="#"
                                 className="hover:text-white transition-colors"
                             >
                                 <Facebook size={32} />
                             </Link>
-                            <Link href="#"
+                            <Link
+                                href="#"
                                 className="hover:text-white transition-colors"
                             >
                                 <Twitter size={32} />
                             </Link>
-                            <Link  href="#"
+                            <Link
+                                href="#"
                                 className="hover:text-white transition-colors"
                             >
                                 <Youtube size={32} />
@@ -161,8 +168,7 @@ export default function Footer() {
                 <div className="mt-16 border-t border-gray-800 pt-8">
                     <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
                         <p className="text-sm text-gray-500">
-                            © 2025 Jim Nelin - Store app.
-                            All rights reserved.
+                            © 2025 Jim Nelin - Store app. All rights reserved.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
