@@ -12,8 +12,8 @@ const nextConfig: NextConfig = {
         ],*/
     images: {
         remotePatterns: [new URL("https://cdn.dummyjson.com/**")],
-    //    remotePatterns: [new URL('https://cdn.dummyjson.com/**')], <--- Fungerar lika bra som ""
-    //    remotePatterns: [new URL("https://cdn.dummyjson.com/*")], <-- Denna fungerar INTE (en wildcard = *)
+        //    remotePatterns: [new URL('https://cdn.dummyjson.com/**')], <--- Fungerar lika bra som ""
+        //    remotePatterns: [new URL("https://cdn.dummyjson.com/*")], <-- Denna fungerar INTE (en wildcard = *)
     },
 };
 

@@ -19,11 +19,16 @@ export async function ProductGrid({
         <div className="container mx-auto px-4">
             <h2 className="pb-4 font-bold text-2xl">
                 {category ? (
-                    <span className="capitalize">{category.replace("-", " ")}</span>
+                    <span className="capitalize">
+                        {category.replace("-", " ")}
+                    </span>
                 ) : (
                     <>
                         Products<span className="text-foreground/60"> | </span>
-                        <Link href={sortLink} className="text-sm text-foreground/60">
+                        <Link
+                            href={sortLink}
+                            className="text-sm text-foreground/60"
+                        >
                             Sorting by price{" "}
                             {sort == "asc" ? "ascending" : "descending"}
                         </Link>

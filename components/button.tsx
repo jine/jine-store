@@ -1,13 +1,15 @@
 import Link from "next/link";
 
-export default function Button({params}: {
+export default function Button({
+    params,
+}: {
     params: {
         title: string;
         href: string;
         disabled?: boolean;
         asLink?: boolean;
-    }}) {
-        
+    };
+}) {
     if (params.asLink) {
         return (
             <Link

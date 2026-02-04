@@ -3,7 +3,6 @@ import type { Product } from "@/lib/types";
 import Link from "next/link";
 
 export function ProductCard({ product }: { product: Product }) {
-
     // Create URL-friendly slug
     const url = `/product/${product.id}-${product.title.replace(/\s+/g, "-").toLowerCase()}`;
 
@@ -26,7 +25,9 @@ export function ProductCard({ product }: { product: Product }) {
             {product.brand && (
                 <h3 className="absolute top-8 p-3">{product.brand}</h3>
             )}
-            <h3 className={`absolute p-3 text-sm uppercase ${product.brand ? "top-16" : "top-8"}`} >
+            <h3
+                className={`absolute p-3 text-sm uppercase ${product.brand ? "top-16" : "top-8"}`}
+            >
                 {product.category}
             </h3>
             <p className="absolute right-0 top-0 p-3 font-bold text-foreground text-m">

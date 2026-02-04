@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import ViewCategory from "@/components/view-category";
 
 export default async function Category({
-    params
+    params,
 }: {
     params: Promise<{ slug: string }>;
 }) {
