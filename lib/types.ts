@@ -24,6 +24,7 @@ export interface ProductFetch {
 export interface ProductGridProps {
     search?: string;
     sort?: string;
+    category?: string;
 }
 
 export interface Category {

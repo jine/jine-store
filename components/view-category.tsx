@@ -3,9 +3,9 @@ import { Category } from "@/lib/types";
 import { Suspense } from "react";
 
 export default async function ViewCategory({
-    category,
+    categorySlug,
 }: {
-    category: Category;
+    categorySlug: string;
 }) {
     /* I need to redo this with params later on, but for now this is fine */
     return (
@@ -15,7 +15,7 @@ export default async function ViewCategory({
                     <div className="container mx-auto px-4">Loading...</div>
                 }
             >
-                <ProductGrid category={category} />
+                <ProductGrid category={categorySlug} />
             </Suspense>
         </main>
     );

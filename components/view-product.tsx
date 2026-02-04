@@ -2,7 +2,6 @@ import Image from "next/image";
 import type { Product } from "@/lib/types";
 import Button from "@/components/button";
 import Link from "next/link";
-import { firstCharToUpperCase } from "@/lib/functions";
 
 export function ViewProduct({ product }: { product: Product }) {
     // Hack to modify the price to fit SEK
@@ -20,7 +19,7 @@ export function ViewProduct({ product }: { product: Product }) {
                     <span className="mx-2">/</span>
 
                     <Link href={`/category/${product.category}`}>
-                        {firstCharToUpperCase(product.category)}
+                        {<span className="capitalize">{product.category}</span>}
                     </Link>
 
                     <span className="mx-2">/</span>
