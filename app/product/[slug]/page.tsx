@@ -1,8 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ViewProduct } from "@/components/view-product";
 import { getProduct } from "@/lib/functions";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import type { Metadata } from "next";
 
 /**
  * Generates metadata for a product page.

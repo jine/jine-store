@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { getProducts, getProductsByCategory } from "@/lib/functions";
 import type { ProductGridProps } from "@/lib/types";
-import Link from "next/link";
 
 /**
  * Product grid component.

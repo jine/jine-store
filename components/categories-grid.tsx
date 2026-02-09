@@ -1,6 +1,6 @@
-import { getCategories } from "@/lib/functions";
-import { Category } from "@/lib/types";
 import Link from "next/link";
+import { getCategories } from "@/lib/functions";
+import type { Category } from "@/lib/types";
 
 /**
  * Categories grid component.

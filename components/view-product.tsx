@@ -1,8 +1,8 @@
 import Image from "next/image";
-import type { Product } from "@/lib/types";
-import Button from "@/components/button";
-import LikeButton from "@/components/likebutton"
 import Link from "next/link";
+import Button from "@/components/button";
+import LikeButton from "@/components/likebutton";
+import type { Product } from "@/lib/types";
 
 /**
  * View product component.
@@ -15,9 +15,12 @@ export async function ViewProduct({ product }: { product: Product }) {
 
     // 1. Hämta initial data direkt på servern
     // Vi lägger till { cache: 'no-store' } för att säkerställa att vi får färsk data
-    const res = await fetch(`http://localhost:3000/api/like?productId=${product.id}`, { 
-        cache: 'no-store' 
-    });
+    const res = await fetch(
+        `http://localhost:3000/api/like?productId=${product.id}`,
+        {
+            cache: "no-store",
+        },
+    );
     const data = await res.json();
     const initialLikes = data.likes || 0;
 
@@ -78,9 +81,10 @@ export async function ViewProduct({ product }: { product: Product }) {
 
                     <div className="space-y-4 pt-4">
                         <div className="flex items-center space-x-2 text-sm">
-
-                            <LikeButton product={product} initialLikes={initialLikes} />
-                            
+                            <LikeButton
+                                product={product}
+                                initialLikes={initialLikes}
+                            />
                             <span className="text-foreground">Rating:</span>{" "}
                             <span className="text-yellow-500">
                                 {product.rating}

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import type { Product } from "@/lib/types";
 import Link from "next/link";
+import type { Product } from "@/lib/types";
 
 /**
  * Product card component.

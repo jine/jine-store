@@ -1,6 +1,6 @@
+import { Suspense } from "react";
 import Hero from "@/components/hero";
 import { ProductGrid } from "@/components/product-grid";
-import { Suspense } from "react";
 
 /**
  * Home page.

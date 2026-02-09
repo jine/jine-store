@@ -1,6 +1,6 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import ViewCategory from "@/components/view-category";
-import type { Metadata } from "next";
 
 /**
  * Generates metadata for a category page.

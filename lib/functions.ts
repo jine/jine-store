@@ -1,4 +1,4 @@
-import type { Product, ProductFetch, CategoriesFetch } from "@/lib/types";
+import type { CategoriesFetch, Product, ProductFetch } from "@/lib/types";
 
 export async function getProducts(
     search = "",

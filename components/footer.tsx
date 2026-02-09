@@ -1,13 +1,14 @@
 // app/components/layout/Footer.tsx
-import Link from "next/link";
+
 import {
-    Instagram,
     Facebook,
-    Twitter,
-    Youtube,
+    Instagram,
     Mail,
     Phone,
+    Twitter,
+    Youtube,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
     return (
