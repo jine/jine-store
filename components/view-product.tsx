@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Product } from "@/lib/types";
 import Button from "@/components/button";
+import LikeButton from "@/components/likebutton"
 import Link from "next/link";
 
 /**
@@ -8,9 +9,17 @@ import Link from "next/link";
  * @param product - The product to display.
  * @returns The view product component.
  */
-export function ViewProduct({ product }: { product: Product }) {
+export async function ViewProduct({ product }: { product: Product }) {
     // Hack to modify the price to fit SEK
     const modifiedPrice = Math.floor(product.price * 10);
+
+    // 1. Hämta initial data direkt på servern
+    // Vi lägger till { cache: 'no-store' } för att säkerställa att vi får färsk data
+    const res = await fetch(`http://localhost:3000/api/like?productId=${product.id}`, { 
+        cache: 'no-store' 
+    });
+    const data = await res.json();
+    const initialLikes = data.likes || 0;
 
     return (
         <main className="container mx-auto px-4 py-12 max-w-5xl">
@@ -81,6 +90,8 @@ export function ViewProduct({ product }: { product: Product }) {
                                     ? `${product.stock} in stock`
                                     : "Not in stock"}
                             </span>
+
+                            <LikeButton product={product} initialLikes={initialLikes} />
                         </div>
 
                         <Button
