@@ -78,6 +78,9 @@ export async function ViewProduct({ product }: { product: Product }) {
 
                     <div className="space-y-4 pt-4">
                         <div className="flex items-center space-x-2 text-sm">
+
+                            <LikeButton product={product} initialLikes={initialLikes} />
+                            
                             <span className="text-foreground">Rating:</span>{" "}
                             <span className="text-yellow-500">
                                 {product.rating}
@@ -90,8 +93,6 @@ export async function ViewProduct({ product }: { product: Product }) {
                                     ? `${product.stock} in stock`
                                     : "Not in stock"}
                             </span>
-
-                            <LikeButton product={product} initialLikes={initialLikes} />
                         </div>
 
                         <Button

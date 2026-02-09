@@ -30,16 +30,11 @@ export default function LikeButton({product, initialLikes}:{product: Product, in
 
 
     return (
-        <>
-            <div>| Like this product? </div>
-
-            <button type="button" 
-            className="button cursor-pointer bg-black text-white p-1 rounded-xl font-bold hover:bg-gray-800 transition-all"
-            onClick={handleLike}
-            >{hasLiked ? "❤️ Liked " : "🤍 Like "}
-			{likes > 0 && <span className="ml-2 font-mono">{likes}</span>}</button>
-
-        </>
+        <button type="button" 
+        className="button cursor-pointer bg-black text-white p-1 rounded-xl font-bold hover:bg-gray-800 transition-all"
+        onClick={handleLike}
+        >{hasLiked ? "❤️ Liked " : "🤍 Like "}
+        {likes > 0 && <span className="ml-2 font-mono">{likes}</span>}</button>
     )
     
 }
