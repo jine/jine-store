@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Product } from "@/lib/types";
 
 export default function LikeButton({
@@ -12,12 +12,24 @@ export default function LikeButton({
 }) {
     const [likes, setLikes] = useState(initialLikes);
     const [hasLiked, setHasLiked] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const productId = product.id;
+
+    // we store the state in localstorage so refreshing the page does "remember" the like.
+    useEffect(() => {
+        const stored = localStorage.getItem(`liked_${productId}`);
+        if (stored === "true") {
+            setHasLiked(true);
+        }
+        setIsLoaded(true);
+    }, [productId]);
 
     const handleLike = async () => {
         const newHasLiked = !hasLiked;
         setHasLiked(newHasLiked);
+
+        localStorage.setItem(`liked_${productId}`, String(newHasLiked));
 
         const res = await fetch("/api/like", {
             method: "POST",
@@ -35,11 +47,18 @@ export default function LikeButton({
     return (
         <button
             type="button"
-            className="button cursor-pointer bg-black text-white p-1 rounded-xl font-bold hover:bg-gray-800 transition-all"
-            onClick={handleLike}
+            className={`button cursor-pointer text-white p-1 rounded-xl font-bold transition-all ${
+                isLoaded
+                    ? "bg-black hover:bg-gray-800"
+                    : "bg-gray-400 cursor-not-allowed"
+            }`}
+            onClick={isLoaded ? handleLike : undefined}
+            disabled={!isLoaded}
         >
-            {hasLiked ? "❤️ Liked " : "🤍 Like "}
-            {likes > 0 && <span className="ml-2 font-mono">{likes}</span>}
+            {!isLoaded ? "🤍 Like" : hasLiked ? "❤️ Liked " : "🤍 Like "}
+            {isLoaded && likes > 0 && (
+                <span className="ml-2 font-mono">{likes}</span>
+            )}
         </button>
     );
 }
