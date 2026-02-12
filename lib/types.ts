@@ -25,6 +25,7 @@ export interface ProductGridProps {
     search?: string;
     sort?: string;
     category?: string;
+    limit?: number;
 }
 
 export interface Category {

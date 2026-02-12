@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LimitSelect } from "@/components/limit-select";
 import { ProductCard } from "@/components/product-card";
 import { getProducts, getProductsByCategory } from "@/lib/functions";
 import type { ProductGridProps } from "@/lib/types";
@@ -14,34 +15,39 @@ export async function ProductGrid({
     search = "",
     sort = "asc",
     category,
+    limit = 30,
 }: ProductGridProps) {
     const jsondata = category
         ? await getProductsByCategory(category)
-        : await getProducts(search, sort);
+        : await getProducts(search, sort, limit);
     const products = jsondata.products;
 
-    const sortLink = `/products?search=${search}&sort=${sort === "asc" ? "desc" : "asc"}`;
+    const sortLink = `/products?search=${search}&sort=${sort === "asc" ? "desc" : "asc"}&limit=${limit}`;
 
     return (
         <div className="container mx-auto px-4">
-            <h2 className="pb-4 font-bold text-2xl">
-                {category ? (
-                    <span className="capitalize">
-                        {category.replace("-", " ")}
-                    </span>
-                ) : (
-                    <>
-                        Products<span className="text-foreground/60"> | </span>
-                        <Link
-                            href={sortLink}
-                            className="text-sm text-foreground/60"
-                        >
-                            Sorting by price{" "}
-                            {sort === "asc" ? "ascending" : "descending"}
-                        </Link>
-                    </>
-                )}
-            </h2>
+            <div className="flex items-center justify-between pb-4">
+                <h2 className="font-bold text-2xl">
+                    {category ? (
+                        <span className="capitalize">
+                            {category.replace("-", " ")}
+                        </span>
+                    ) : (
+                        <>
+                            Products
+                            <span className="text-foreground/60"> | </span>
+                            <Link
+                                href={sortLink}
+                                className="text-sm text-foreground/60"
+                            >
+                                Sorting by price{" "}
+                                {sort === "asc" ? "ascending" : "descending"}
+                            </Link>
+                        </>
+                    )}
+                </h2>
+                {!category && <LimitSelect currentLimit={limit} />}
+            </div>
 
             {products.length < 1 ? (
                 <div>No products found.</div>

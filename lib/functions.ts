@@ -3,9 +3,10 @@ import type { CategoriesFetch, Product, ProductFetch } from "@/lib/types";
 export async function getProducts(
     search = "",
     sort = "asc",
+    limit = 30,
 ): Promise<ProductFetch> {
     const response = await fetch(
-        `https://dummyjson.com/products/search?q=${search}&order=${sort}&sortBy=price`,
+        `https://dummyjson.com/products/search?q=${search}&order=${sort}&sortBy=price&limit=${limit}`,
     );
     const data = await response.json();
     return data;
