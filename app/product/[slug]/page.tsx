@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ViewProduct } from "@/components/view-product";
+import { ViewProduct } from "@/components/views/view-product";
 import { getProduct } from "@/lib/functions";
 
 /**

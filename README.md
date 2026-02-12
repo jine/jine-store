@@ -1,34 +1,85 @@
-## Store app
+# Jine Store
 
-First, run the development server:
+A simple e-commerce storefront built with Next.js and the DummyJSON API.
+
+## What's this?
+
+This is a practice project for learning Next.js 15+ with App Router. It's a basic online store that fetches product data from [DummyJSON](https://dummyjson.com/) and displays it with search, sorting, and category filtering.
+
+## Features
+
+- **Product listing** with grid layout
+- **Category filtering** - browse products by category
+- **Search products** by title
+- **Sort by price** (ascending/descending)
+- **Limit selector** - choose how many products to show per page (10, 20, 30, 50, 100)
+- **Like button** with local storage persistence
+- **Responsive design** with Tailwind CSS
+- **Server-side rendering** for SEO
+
+## Tech Stack
+
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS v4** - Styling
+- **Biome** - Linting and formatting
+- **DummyJSON API** - Mock product data
+
+## Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/                    # Next.js App Router pages
+├── page.tsx           # Home page
+├── products/page.tsx  # All products with filters
+├── product/[slug]/    # Individual product page
+├── category/[slug]/   # Category filter page
+├── categories/page.tsx # Categories list
+└── api/like/route.ts  # API route for likes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+components/
+├── ui/                # Reusable UI components (Button, LikeButton)
+├── products/          # Product-related (ProductCard, ProductGrid, LimitSelect)
+├── categories/        # Category grid
+├── layout/            # Layout components (Navbar, Footer, Hero)
+└── views/             # Page-specific views
 
-## Learn More
+lib/
+├── types.ts           # TypeScript interfaces
+└── functions.ts       # Data fetching functions
+```
 
-To learn more about Next.js, take a look at the following resources:
+## API Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app uses [DummyJSON Products API](https://dummyjson.com/docs/products) for:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Fetching products with search, sort, and limit parameters
+- Getting product categories
+- Fetching single product details
+- Filtering by category
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run Biome linter
+- `npm run format` - Format code with Biome
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+This is a learning project. The like feature stores data locally in the browser (localStorage) and uses a simple API route. No real backend or database.
+
+Built by [Jim Nelin](https://github.com/jine) learning Next.js and React.

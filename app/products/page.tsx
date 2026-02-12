@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ProductGrid } from "@/components/product-grid";
+import { ProductGrid } from "@/components/products/product-grid";
 
 /**
  * Metadata for the products page.

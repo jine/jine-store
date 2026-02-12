@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/button";
-import LikeButton from "@/components/likebutton";
+import Button from "@/components/ui/button";
+import LikeButton from "@/components/ui/like-button";
 import type { Product } from "@/lib/types";
 
 /**

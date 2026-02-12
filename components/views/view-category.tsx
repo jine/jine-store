@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { ProductGrid } from "@/components/product-grid";
+import { ProductGrid } from "@/components/products/product-grid";
 
 /**
  * View category component.
