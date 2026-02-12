@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ViewCategory from "@/components/views/view-category";
+import ViewCategory from "@/components/categories/view-category";
 
 /**
  * Generates metadata for a category page.
