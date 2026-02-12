@@ -22,6 +22,7 @@ export default async function Products({
     searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
     const { sort = "asc", search = "", limit = "30" } = await searchParams;
+    const limitNumber = Number(limit);
 
     return (
         <main className="flex flex-col gap-12 pb-20 pt-10">
@@ -30,11 +31,7 @@ export default async function Products({
                     <div className="container mx-auto px-4">Loading...</div>
                 }
             >
-                <ProductGrid
-                    search={search}
-                    sort={sort}
-                    limit={Number(limit)}
-                />
+                <ProductGrid search={search} sort={sort} limit={limitNumber} />
             </Suspense>
         </main>
     );
