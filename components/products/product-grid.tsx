@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { LimitSelect } from "@/components/products/limit-select";
 import { ProductCard } from "@/components/products/product-card";
+import { LimitSelect } from "@/components/ui/limit-select";
 import { getProducts, getProductsByCategory } from "@/lib/functions";
 import type { ProductGridProps } from "@/lib/types";
 
