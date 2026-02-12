@@ -29,7 +29,11 @@ export default function LikeButton({
         const newHasLiked = !hasLiked;
         setHasLiked(newHasLiked);
 
-        localStorage.setItem(`liked_${productId}`, String(newHasLiked));
+        if (newHasLiked) {
+            localStorage.setItem(`liked_${productId}`, "true");
+        } else {
+            localStorage.removeItem(`liked_${productId}`);
+        }
 
         const res = await fetch("/api/like", {
             method: "POST",
