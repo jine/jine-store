@@ -25,6 +25,7 @@ export default function LikeButton({
         setIsLoaded(true);
     }, [productId]);
 
+    // handels the like-event from client
     const handleLike = async () => {
         const newHasLiked = !hasLiked;
         setHasLiked(newHasLiked);
@@ -56,7 +57,7 @@ export default function LikeButton({
                     ? "bg-black hover:bg-gray-800"
                     : "bg-gray-400 cursor-not-allowed"
             }`}
-            onClick={isLoaded ? handleLike : undefined}
+            onSelect={isLoaded ? handleLike : undefined}
             disabled={!isLoaded}
         >
             {!isLoaded ? "🤍 Like" : hasLiked ? "❤️ Liked " : "🤍 Like "}
