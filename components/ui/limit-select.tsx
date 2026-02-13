@@ -34,7 +34,7 @@ export function LimitSelect({ currentLimit }: { currentLimit: number }) {
             <select
                 id="limit"
                 name="limit"
-                value={currentLimit}
+                defaultValue={currentLimit}
                 onChange={handleChange}
                 className="px-3 py-1.5 text-sm border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
             >
