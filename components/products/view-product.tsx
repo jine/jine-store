@@ -13,8 +13,7 @@ export async function ViewProduct({ product }: { product: Product }) {
     // Hack to modify the price to fit SEK
     const modifiedPrice = Math.floor(product.price * 10);
 
-    // 1. Hämta initial data direkt på servern
-    // Vi lägger till { cache: 'no-store' } för att säkerställa att vi får färsk data
+    // Fetch likes for the client component, via the server component
     const res = await fetch(
         `http://localhost:3000/api/like?productId=${product.id}`,
         {

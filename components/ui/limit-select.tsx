@@ -9,6 +9,10 @@ export function LimitSelect({ currentLimit }: { currentLimit: number }) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
+    /**
+     * Handles onChange event on the limit select dropdown
+     * @param event 
+     */
     function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
         const newLimit = event.target.value;
         const params = new URLSearchParams(searchParams.toString());
@@ -18,7 +22,7 @@ export function LimitSelect({ currentLimit }: { currentLimit: number }) {
         params.delete("page");
         router.push(`${pathname}?${params.toString()}`);
         
-        // we need router.refresh to re-render the serverside page
+        // Making a new request to the server, re-fetching data requests, and re-rendering Server Components. 
         router.refresh();
     }
 
@@ -35,7 +39,7 @@ export function LimitSelect({ currentLimit }: { currentLimit: number }) {
                 className="px-3 py-1.5 text-sm border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
             >
                 {limitOptions.map((limit) => (
-                    <option key={limit} value={limit}>
+                    <option key={`option-${limit}`} value={limit}>
                         {limit}
                     </option>
                 ))}
